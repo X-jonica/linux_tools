@@ -1,0 +1,73 @@
+INSTALLATION DE NODE.JS, GIT ET OUTILS SOUS UBUNTU
+=================================================
+
+## 1. Installation de Node.js avec NVM
+---------------------------------------
+
+### 1.1 Installer `curl`
+```bash
+sudo apt update
+sudo apt install curl -y
+```
+
+### 1.2 Télécharger et installer NVM
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
+
+### 1.3 Charger NVM sans redémarrer le terminal
+```bash
+. "$HOME/.nvm/nvm.sh"
+```
+
+### 1.4 Télécharger et installer Node.js (version 22)
+```bash
+nvm install 22
+```
+
+### 1.5 Vérifier la version de Node.js
+```bash
+node -v    # Devrait afficher "v22.18.0"
+nvm current # Devrait afficher "v22.18.0"
+```
+
+### 1.6 Vérifier la version de npm
+```bash
+npm -v    # Devrait afficher "10.9.3"
+```
+
+---
+
+## 2. Installation de Git
+--------------------------
+```bash
+sudo apt update
+sudo apt install git-all
+git --version
+```
+
+---
+
+## 3. Installation de Gnome Tweaks (amélioration graphique)
+-----------------------------------------------------------
+```bash
+sudo apt update
+sudo apt install gnome-tweaks
+```
+
+---
+
+## 4. Installation de Gnome Shell Extensions (widgets de surveillance)
+----------------------------------------------------------------------
+Après avoir installé Gnome Tweaks :
+```bash
+sudo apt install gnome-shell-extensions
+```
+
+---
+
+## 5. Installation d'un fichier `.deb`
+--------------------------------------
+```bash
+sudo dpkg -i package_file.deb
+```

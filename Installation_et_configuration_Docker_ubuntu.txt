@@ -1,0 +1,46 @@
+=== INSTALLATION DE DOCKER ET DOCKER COMPOSE ===
+(Sauvegardez ce fichier sous install_docker.sh puis exécutez-le)
+
+#!/bin/bash
+
+# 1. Désinstaller les anciennes versions
+sudo apt remove -y docker docker-engine docker.io containerd runc
+sudo apt autoremove -y
+
+# 2. Installer les dépendances
+sudo apt update
+sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
+    software-properties-common
+
+# 3. Ajouter la clé GPG officielle de Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# 4. Ajouter le dépôt Docker
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 5. Installer Docker Engine
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# 6. Installer Docker Compose
+sudo apt install -y docker-compose-plugin
+
+# 7. Vérifier l'installation
+sudo docker --version
+sudo docker compose version
+
+# 8. Configurer les permissions (remplacez $USER par votre nom d'utilisateur si besoin)
+sudo usermod -aG docker $USER
+newgrp docker
+
+# 9. Tester sans sudo
+docker run hello-world
+
+echo "Installation terminée ! Déconnectez et reconnectez votre session pour que les changements prennent effet."
