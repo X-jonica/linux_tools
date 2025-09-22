@@ -8,7 +8,9 @@ Option 1 : Installer `code` via pacman (open source)
 ------------------------------------------------------
 
 Commande :
+```bash
     sudo pacman -S code
+```
 
 ✔ Avantages :
 - C’est la version open source (basée sur VS Code OSS).
@@ -24,7 +26,9 @@ Option 2 : Installer `visual-studio-code-bin` via AUR (officiel Microsoft)
 ------------------------------------------------------
 
 Commande :
+```bash
     yay -S visual-studio-code-bin
+```
 
 ✔ Avantages :
 - C’est la version officielle de Microsoft (logo, fonctionnalités et extensions complètes).
