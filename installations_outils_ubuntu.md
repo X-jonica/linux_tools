@@ -1,4 +1,4 @@
-INSTALLATION DE NODE.JS, GIT ET OUTILS SOUS UBUNTU
+# INSTALLATION DE NODE.JS, GIT ET OUTILS SOUS UBUNTU
 =================================================
 
 ## 1. Installation de Node.js avec NVM
