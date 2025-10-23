@@ -4,11 +4,12 @@ Ce guide explique toutes les étapes pour installer et configurer correctement u
 
 ---
 
-## 1. Vérifier le noyau Linux
+## 1. Mettre à jour le système et vérifier le noyau Linux
 
 Ouvrez un terminal et tapez :
 
 ```bash
+sudo pacman -Syu
 uname -r
 ```
 
